@@ -12,15 +12,34 @@ const employeeSlice = createSlice({
     updateEmployeeList(state, action) {
       state.employeesList = action.payload;
     },
+    updateManagerIdinList(state, action) {
+      state.employeesList = state.employeesList.map((emp) =>
+        emp.id === action.payload.id ? action.payload : emp
+      );
+    },
   },
 });
 
-export const { updateEmployeeList } = employeeSlice.actions;
+export const { updateEmployeeList, updateManagerIdinList } =
+  employeeSlice.actions;
 
 export const fetchData = () => async (dispatch) => {
   try {
     const response = await axios.get("http://localhost:8000/data");
     dispatch(updateEmployeeList(response.data));
+    return "Fetching Successful";
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const updateManagerId = (id, mid) => async (dispatch) => {
+  try {
+    const response = await axios.patch(`http://localhost:8000/data/${id}`, {
+      manager: mid,
+    });
+    dispatch(updateManagerIdinList(response.data));
+    console.log(response.data);
     return "Fetching Successful";
   } catch (error) {
     console.log(error);

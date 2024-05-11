@@ -15,7 +15,9 @@ function App() {
   return (
     <div className="row">
       <div className="col-xl-4">
-        <EmployeeList />
+        <div className="emplistDiv p-3">
+          <EmployeeList />
+        </div>
       </div>
     </div>
   );

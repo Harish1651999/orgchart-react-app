@@ -25,7 +25,7 @@ const EmployeeList = () => {
     <>
       <h5 className="fw-600 title-gray">Employee List</h5>
       <div className="row">
-        <div className="col-xl-8">
+        <div className="col-xl-8 col-lg-8">
           <div className="emp-search-div position-relative mb-3">
             <input
               className="form-control bg-white ps-5"
@@ -54,7 +54,7 @@ const EmployeeList = () => {
             </svg>
           </div>
         </div>
-        <div className="col-xl-4">
+        <div className="col-xl-4 col-lg-4">
           <div className="dropdown">
             <button
               className="btn btn-secondary dropdown-toggle w-100"
@@ -80,11 +80,13 @@ const EmployeeList = () => {
           </div>
         </div>
       </div>
-      {searchTerm == ""
-        ? emplist.map((emp) => <EmployeeItem key={emp.id} emp={emp} />)
-        : filteredEmployees.map((emp) => (
-            <EmployeeItem key={emp.id} emp={emp} />
-          ))}
+      <div className="overflow-auto empListItemDiv">
+        {searchTerm == ""
+          ? emplist.map((emp) => <EmployeeItem key={emp.id} emp={emp} />)
+          : filteredEmployees.map((emp) => (
+              <EmployeeItem key={emp.id} emp={emp} />
+            ))}
+      </div>
     </>
   );
 };

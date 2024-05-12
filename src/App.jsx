@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "./App.css";
+import "./orgChart.css";
 import { fetchData } from "./store/employeeSlice";
 import { useDispatch, useSelector } from "react-redux";
 import EmployeeList from "./components/EmployeeList";
@@ -14,15 +15,17 @@ function App() {
   }, []); // Call the effect only once when component mounts
 
   return (
-    <div className="row">
-      <div className="col-xl-4">
-        <div className="emplistDiv p-3">
-          <EmployeeList />
+    <div className="orgChart-page pt-3 overflow-hidden">
+      <div className="row m-0">
+        <div className="col-xl-4 col-lg-4">
+          <div className="emplistDiv h-100 p-3">
+            <EmployeeList />
+          </div>
         </div>
-      </div>
-      <div className="col-xl-8">
-        <div className="">
-          <MyOrgChart />
+        <div className="col-xl-8 col-lg-8">
+          <div className="">
+            <MyOrgChart />
+          </div>
         </div>
       </div>
     </div>

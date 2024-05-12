@@ -1,27 +1,25 @@
 import React from "react";
+import jobIcon from "../assets/job.svg";
+import teamIcon from "../assets/team.svg";
 
 const EmployeeItem = ({ emp }) => {
   return (
     <div className="card mb-3" key={emp.id}>
       <div className="card-body">
         <h6 className="card-title fw-600">{emp.name}</h6>
-        <h6 className="card-subtitle mb-2 text-body-secondary">{emp.name}</h6>
-        <p className="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <p className="d-flex align-items-center mb-2">
+          <img
+            className="img-fluid"
+            alt="Designation"
+            title="Designation"
+            src={jobIcon}
+          />
+          <span className="ms-2">{emp.designation}</span>
         </p>
-        <p className="d-flex align-items-center">
-          <span>{emp.designation}</span>
+        <p className="d-flex align-items-center mb-0">
+          <img className="img-fluid" alt="Team" title="Team" src={teamIcon} />
+          <span className="ms-2">{emp.team}</span>
         </p>
-        <p className="d-flex align-items-center">
-          <span>{emp.team}</span>
-        </p>
-        <a href="#" className="card-link">
-          Card link
-        </a>
-        <a href="#" className="card-link">
-          Another link
-        </a>
       </div>
     </div>
   );

@@ -1,0 +1,6 @@
+.orgChart-page{
+    height: calc(100vh - 1rem);
+}
+.empListItemDiv{
+    height: calc(100vh - 9.5rem);
+}

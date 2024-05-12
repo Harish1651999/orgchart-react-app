@@ -1,144 +1,74 @@
 {
   "data": [
     {
-      "ID": 1,
-      "Name": "John Doe",
-      "Designation": "Software Engineer",
-      "Team": "Development",
-      "Manager": 5
+      "id": "1",
+      "name": "John Doe",
+      "designation": "Software Engineer",
+      "team": "Development",
+      "manager": 5
     },
     {
-      "ID": 2,
-      "Name": "Jane Smith",
-      "Designation": "UX Designer",
-      "Team": "Design",
-      "Manager": 5
+      "id": "2",
+      "name": "Jane Smith",
+      "designation": "UX Designer",
+      "team": "Design",
+      "manager": 5
     },
     {
-      "ID": 3,
-      "Name": "Michael Johnson",
-      "Designation": "Project Manager",
-      "Team": "Management",
-      "Manager": 6
+      "id": "3",
+      "name": "Michael Johnson",
+      "designation": "Project Manager",
+      "team": "Management",
+      "manager": 6
     },
     {
-      "ID": 4,
-      "Name": "Emily Davis",
-      "Designation": "Data Analyst",
-      "Team": "Analytics",
-      "Manager": 6
+      "id": "4",
+      "name": "Emily Davis",
+      "designation": "Data Analyst",
+      "team": "Analytics",
+      "manager": 6
     },
     {
-      "ID": 5,
-      "Name": "David Wilson",
-      "Designation": "Engineering Manager",
-      "Team": "Development",
-      "Manager": 7
+      "id": "5",
+      "name": "David Wilson",
+      "designation": "Engineering Manager",
+      "team": "Development",
+      "manager": 7
     },
     {
-      "ID": 6,
-      "Name": "Sarah Brown",
-      "Designation": "HR Manager",
-      "Team": "Human Resources",
-      "Manager": 7
+      "id": "6",
+      "name": "Sarah Brown",
+      "designation": "HR Manager",
+      "team": "Human Resources",
+      "manager": 7
     },
     {
-      "ID": 7,
-      "Name": "Christopher Lee",
-      "Designation": "CEO",
-      "Team": "Management",
-      "Manager": null
+      "id": "7",
+      "name": "Christopher Lee",
+      "designation": "CEO",
+      "team": "Management",
+      "manager": null
     },
     {
-      "ID": 8,
-      "Name": "Amanda Garcia",
-      "Designation": "Marketing Specialist",
-      "Team": "Marketing",
-      "Manager": 7
+      "id": "8",
+      "name": "Amanda Garcia",
+      "designation": "Marketing Specialist",
+      "team": "Marketing",
+      "manager": 7
     },
     {
-      "ID": 9,
-      "Name": "Daniel Martinez",
-      "Designation": "Financial Analyst",
-      "Team": "Finance",
-      "Manager": 6
+      "id": "9",
+      "name": "Daniel Martinez",
+      "designation": "Financial Analyst",
+      "team": "Finance",
+      "manager": 6
     },
     {
-      "ID": 10,
-      "Name": "Olivia Hernandez",
-      "Designation": "Product Manager",
-      "Team": "Product",
-      "Manager": 6
-    },
-    {
-      "ID": 11,
-      "Name": "William Lopez",
-      "Designation": "Quality Assurance Engineer",
-      "Team": "Quality Assurance",
-      "Manager": 1
-    },
-    {
-      "ID": 12,
-      "Name": "Sophia Gonzalez",
-      "Designation": "Graphic Designer",
-      "Team": "Design",
-      "Manager": 2
-    },
-    {
-      "ID": 13,
-      "Name": "James Perez",
-      "Designation": "Systems Analyst",
-      "Team": "Development",
-      "Manager": 1
-    },
-    {
-      "ID": 14,
-      "Name": "Isabella Torres",
-      "Designation": "Content Writer",
-      "Team": "Marketing",
-      "Manager": 8
-    },
-    {
-      "ID": 15,
-      "Name": "Benjamin Flores",
-      "Designation": "Customer Support Specialist",
-      "Team": "Customer Support",
-      "Manager": 6
-    },
-    {
-      "ID": 16,
-      "Name": "Mia Washington",
-      "Designation": "UI Developer",
-      "Team": "Development",
-      "Manager": 5
-    },
-    {
-      "ID": 17,
-      "Name": "Ethan Carter",
-      "Designation": "Business Analyst",
-      "Team": "Analytics",
-      "Manager": 4
-    },
-    {
-      "ID": 18,
-      "Name": "Amelia Hill",
-      "Designation": "Recruiter",
-      "Team": "Human Resources",
-      "Manager": 6
-    },
-    {
-      "ID": 19,
-      "Name": "Henry Green",
-      "Designation": "Sales Manager",
-      "Team": "Sales",
-      "Manager": 7
-    },
-    {
-      "ID": 20,
-      "Name": "Charlotte Russell",
-      "Designation": "Public Relations Specialist",
-      "Team": "Marketing",
-      "Manager": 7
+      "id": "10",
+      "name": "Olivia Hernandez",
+      "designation": "Product Manager",
+      "team": "Product",
+      "manager": 6
     }
   ]
 }

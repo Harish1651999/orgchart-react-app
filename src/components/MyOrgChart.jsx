@@ -45,7 +45,7 @@ const MyOrgChart = () => {
 
     chart.on("drop", function (sender, draggedNodeId, droppedNodeId) {
       console.log({ sender, draggedNodeId, droppedNodeId });
-      dispatch(updateManagerId(draggedNodeId, droppedNodeId));
+      dispatch(updateManagerId(Number(draggedNodeId), Number(droppedNodeId)));
       //   if (draggedNodeId == 1) {
       //     return false;
       //   }

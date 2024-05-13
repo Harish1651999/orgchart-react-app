@@ -25,7 +25,9 @@ export const { updateEmployeeList, updateManagerIdinList } =
 
 export const fetchData = () => async (dispatch) => {
   try {
-    const response = await axios.get("http://localhost:8000/data");
+    const response = await axios.get(
+      "https://org-chart-2aa4.onrender.com/data"
+    );
     dispatch(updateEmployeeList(response.data));
     return "Fetching Successful";
   } catch (error) {
@@ -35,9 +37,12 @@ export const fetchData = () => async (dispatch) => {
 
 export const updateManagerId = (id, mid) => async (dispatch) => {
   try {
-    const response = await axios.patch(`http://localhost:8000/data/${id}`, {
-      manager: mid,
-    });
+    const response = await axios.patch(
+      `https://org-chart-2aa4.onrender.com/data/${id}`,
+      {
+        manager: mid,
+      }
+    );
     dispatch(updateManagerIdinList(response.data));
     console.log(response.data);
     return "Fetching Successful";

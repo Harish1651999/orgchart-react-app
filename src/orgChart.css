@@ -4,3 +4,6 @@
 .empListItemDiv{
     height: calc(100vh - 9.5rem);
 }
+.node{
+    font-family: 'Poppins', sans-serif !important;
+}

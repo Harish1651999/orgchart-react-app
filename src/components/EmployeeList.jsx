@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import EmployeeItem from "./EmployeeItem";
 
-const EmployeeList = () => {
+const EmployeeList = ({ onFilterChange }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const emplist = useSelector((state) => state.employee.employeesList);
 
@@ -12,13 +12,22 @@ const EmployeeList = () => {
   // Filter employees based on search term
   const filteredEmployees = emplist.filter(
     ({ name, designation, team }) =>
-      name.toLowerCase().includes(searchTerm) ||
-      designation.toLowerCase().includes(searchTerm) ||
-      team.toLowerCase().includes(searchTerm)
+      name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      designation.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      team.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   function searchTermHandler(e) {
     setSearchTerm(e.target.value.toLowerCase());
+  }
+
+  function filterHandler(team) {
+    setSearchTerm(team);
+    if (team != "") {
+      onFilterChange(team);
+    } else {
+      onFilterChange("All");
+    }
   }
 
   return (
@@ -59,7 +68,7 @@ const EmployeeList = () => {
             <button
               className="btn btn-secondary dropdown-toggle w-100"
               type="button"
-              id="dropdownMenuButton1"
+              id="filterdropdownButton"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
@@ -67,11 +76,24 @@ const EmployeeList = () => {
             </button>
             <ul
               className="dropdown-menu dropdown-menu-end"
-              aria-labelledby="dropdownMenuButton1"
+              aria-labelledby="filterdropdownButton"
             >
+              <li>
+                <a
+                  className="dropdown-item"
+                  href="javascript:void(0)"
+                  onClick={() => filterHandler("")}
+                >
+                  All Teams
+                </a>
+              </li>
               {uniqueTeams.map((team, index) => (
                 <li key={index}>
-                  <a className="dropdown-item" href="#">
+                  <a
+                    className="dropdown-item"
+                    href="#"
+                    onClick={() => filterHandler(team)}
+                  >
                     {team}
                   </a>
                 </li>
@@ -81,7 +103,7 @@ const EmployeeList = () => {
         </div>
       </div>
       <div className="overflow-auto empListItemDiv">
-        {searchTerm == ""
+        {searchTerm === ""
           ? emplist.map((emp) => <EmployeeItem key={emp.id} emp={emp} />)
           : filteredEmployees.map((emp) => (
               <EmployeeItem key={emp.id} emp={emp} />

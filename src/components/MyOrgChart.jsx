@@ -3,9 +3,15 @@ import OrgChart from "@balkangraph/orgchart.js";
 import { useDispatch, useSelector } from "react-redux";
 import { updateManagerId } from "../store/employeeSlice";
 
-const MyOrgChart = () => {
+const MyOrgChart = ({ filteredTeam }) => {
   const dispatch = useDispatch();
   const emplist = useSelector((state) => state.employee.employeesList);
+
+  // Filter employees based on the selected team
+  const filteredEmployees =
+    filteredTeam === "All"
+      ? emplist
+      : emplist.filter((emp) => emp.team === filteredTeam);
 
   useEffect(() => {
     const chart = new OrgChart(document.getElementById("tree"), {
@@ -27,35 +33,15 @@ const MyOrgChart = () => {
       editForm: {
         photoBinding: "Photo",
       },
-      //   nodeMenu: {
-      //     details: { text: "Details" },
-      //     edit: { text: "Edit" },
-      //     add: { text: "Add" },
-      //     remove: { text: "Remove" },
-      //   },
     });
-
-    // chart.on("init", function (sender) {
-    //   //   sender.editUI.show(1);
-    // });
-
-    // chart.on("click", function (sender, args) {
-    //   sender.editUI.show(0);
-    // });
 
     chart.on("drop", function (sender, draggedNodeId, droppedNodeId) {
       console.log({ sender, draggedNodeId, droppedNodeId });
       dispatch(updateManagerId(Number(draggedNodeId), Number(droppedNodeId)));
-      //   if (draggedNodeId == 1) {
-      //     return false;
-      //   }
-
-      //   if (droppedNodeId == 4) {
-      //     return false;
-      //   }
     });
 
-    let empData = emplist.map((emp) => {
+    // Load filtered employees into the chart
+    let empData = filteredEmployees.map((emp) => {
       return {
         id: emp.id,
         pid: emp.manager,
@@ -66,9 +52,9 @@ const MyOrgChart = () => {
     });
 
     chart.load(empData);
-  }, [emplist]);
+  }, [filteredEmployees]); // Reload the chart when the filtered employees change
 
-  return <div id="tree" />;
+  return <div id="tree" className="vh-100" />;
 };
 
 export default MyOrgChart;
